@@ -6,12 +6,12 @@
 average_squares documentation
 =============================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+The purpose of this project is to provide a simple utility to calculate
+the average of the squares of a list of numbers, with optional weighting.
 
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+content/average-squares-docs

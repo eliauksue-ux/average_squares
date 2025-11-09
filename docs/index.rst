@@ -14,4 +14,4 @@ the average of the squares of a list of numbers, with optional weighting.
    :maxdepth: 2
    :caption: Contents:
 
-content/average-squares-docs
+   content/average-squares-docs
