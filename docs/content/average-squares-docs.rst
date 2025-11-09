@@ -1,6 +1,6 @@
 Average Squares Documentation
 =============================
-.. automodule:: average_squares.main
+.. automodule:: squares
    :members:
    :undoc-members:
    :show-inheritance:
