@@ -15,3 +15,4 @@ the average of the squares of a list of numbers, with optional weighting.
    :caption: Contents:
 
    content/average-squares-docs
+   
