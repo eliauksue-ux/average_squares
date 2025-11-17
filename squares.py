@@ -54,34 +54,43 @@ def convert_numbers(list_of_strings):
 
 def process():
     parser = ArgumentParser(
-        description="Compute the weighted average of squares of numbers."
+        description="Compute the weighted average of squares from a file of numbers."
     )
+
+    # 第一个必填参数：数字文件名
     parser.add_argument(
-        "numbers",
-        metavar="N",
+        "file_numbers",
+        metavar="FILE_NUMBERS",
         type=str,
-        nargs="+",
-        help="Numbers to process",
+        help="Text file containing numbers separated by whitespace.",
     )
+
+    # 可选参数：权重文件名
     parser.add_argument(
         "--weights",
-        metavar="W",
+        metavar="FILE_WEIGHTS",
         type=str,
-        nargs="*",
         default=None,
-        help="Weights for each number",
+        help="Optional text file containing weights separated by whitespace.",
     )
+
     arguments = parser.parse_args()
-    
-    numbers = convert_numbers(arguments.numbers)
-    
+
+    # 读取数字文件
+    with open(arguments.file_numbers, "r") as f:
+        numbers_strings = f.readlines()
+
+    numbers = convert_numbers(numbers_strings)
+
+    # 如果有提供权重文件，则读取
     if arguments.weights is not None:
-        weights = convert_numbers(arguments.weights)
+        with open(arguments.weights, "r") as f:
+            weights_strings = f.readlines()
+        weights = convert_numbers(weights_strings)
     else:
         weights = None
-    
+
     result = average_of_squares(numbers, weights)
-    
     print(result)
 
 
