@@ -57,7 +57,6 @@ def process():
         description="Compute the weighted average of squares from a file of numbers."
     )
 
-    # 第一个必填参数：数字文件名
     parser.add_argument(
         "file_numbers",
         metavar="FILE_NUMBERS",
@@ -65,7 +64,6 @@ def process():
         help="Text file containing numbers separated by whitespace.",
     )
 
-    # 可选参数：权重文件名
     parser.add_argument(
         "--weights",
         metavar="FILE_WEIGHTS",
@@ -76,13 +74,11 @@ def process():
 
     arguments = parser.parse_args()
 
-    # 读取数字文件
     with open(arguments.file_numbers, "r") as f:
         numbers_strings = f.readlines()
 
     numbers = convert_numbers(numbers_strings)
 
-    # 如果有提供权重文件，则读取
     if arguments.weights is not None:
         with open(arguments.weights, "r") as f:
             weights_strings = f.readlines()
