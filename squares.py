@@ -61,7 +61,7 @@ def process():
         metavar="N",
         type=str,
         nargs="+",
-        help="Numbers to process (whitespace allowed)",
+        help="Numbers to process",
     )
     parser.add_argument(
         "--weights",
@@ -69,7 +69,7 @@ def process():
         type=str,
         nargs="*",
         default=None,
-        help="Weights for each number (whitespace allowed)",
+        help="Weights for each number",
     )
     arguments = parser.parse_args()
     
